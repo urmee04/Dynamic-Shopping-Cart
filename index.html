@@ -4,12 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <title>Dynamic Shopping Cart</title>
 </head>
 <body>
   <!-- Layout for Shopping Cart: includes Item name, quantity, price fields and an Add Item button  -->
   <div class="container">
-      <h1>Shopping Cart</h1>
+      <header>
+       <h1>Shopping Cart</h1>
+       <div class="cart-icon-container">
+        <i class="fas fa-shopping-cart cart-icon"></i>
+        <span id="cart-count">0</span>
+       </div>
+      </header>
   <div id="item-container">
       <input type="text" id="name" placeholder="Item Name" required>
       <input type="number" id="quantity" min="1" value="0" required>
