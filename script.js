@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add to cart array
     cartItems.push({
       name: itemName,
+      quantity: itemQuantity,
       price: itemPrice * itemQuantity,
     });
 
@@ -53,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Clear inputs
     nameInput.value = "";
     priceInput.value = "";
-    quantityInput.value = "1";
+    quantityInput.value = 1;
     nameInput.focus();
   }
 
@@ -61,6 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Clear the cart list and reset total price
     cartList.replaceChildren();
     totalPrice = 0;
+
+    //calculate total quantity using reduce
+    const totalQuantity = cartItems.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
 
     // Rebuild the cart UI for each item
     cartItems.forEach((item, index) => {
@@ -72,11 +79,15 @@ document.addEventListener("DOMContentLoaded", function () {
       // Create DOM elements
       const nameSpan = document.createElement("span");
       nameSpan.className = "item-name";
-      nameSpan.textContent = item.name;
+      nameSpan.textContent = "Item: " + item.name;
+
+      const quantitySpan = document.createElement("span");
+      quantitySpan.className = "item-quantity";
+      quantitySpan.textContent = "Quantity: " + item.quantity;
 
       const priceSpan = document.createElement("span");
       priceSpan.className = "item-price";
-      priceSpan.textContent = "$" + item.price.toFixed(2);
+      priceSpan.textContent = "Price: " + "$" + item.price.toFixed(2);
 
       const removeBtn = document.createElement("button");
       removeBtn.className = "remove-item";
@@ -84,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
       removeBtn.dataset.index = index; // Set index for removal
 
       // Append Elements
-      listItem.append(nameSpan, priceSpan, removeBtn);
+      listItem.append(nameSpan, quantitySpan, priceSpan, removeBtn);
       cartList.appendChild(listItem);
 
       // Update running total
@@ -92,6 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     // Update summary displays
     totalDisplay.textContent = totalPrice.toFixed(2);
-    cartCount.textContent = cartItems.length.toString();
+    cartCount.textContent = totalQuantity.toString();
   }
 });
