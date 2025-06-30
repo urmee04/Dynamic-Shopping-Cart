@@ -55,12 +55,15 @@ Task-Management-App/
 **How did you dynamically create and append new elements to the DOM?**
 
 I used document.createElement() to create new list items and appendChild() to add them to the cart.
+
 **What steps did you take to ensure accurate updates to the total price?**
 
 I maintained a totalPrice variable that updates whenever a product is added or removed, ensuring the displayed total reflects the current state of the cart.
+
 **How did you handle invalid input for product name or price?**
 
 I included validation checks before adding a product to ensure the name is not empty and the price is a positive number.
+
 **What challenges did you face when implementing the remove functionality?**
 
 I had to ensure that the correct price was deducted from the total when an item was removed, which required storing the price in a data attribute on the list item.
