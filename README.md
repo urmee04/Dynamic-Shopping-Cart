@@ -1,12 +1,12 @@
-## Lab 5.1: Dynamic Content Creation
+### Lab 5.1: Dynamic Content Creation
 
 ---
 
-### Lab Overview
+#### Lab Overview
 
 This lab intends to create a dynamic shopping cart application to practice and reinforce DOM manipulation skills. The application will allow users to add, update, and remove items dynamically while keeping track of the total price. This lab focuses on modifying elements, creating and appending new elements, and updating content dynamically using JavaScript.
 
-#### Features
+##### Features
 
 1. Add new items with:
 
@@ -22,7 +22,7 @@ This lab intends to create a dynamic shopping cart application to practice and r
 
 4. View added items along with their quantities and prices
 
-#### Tech Stack
+##### Tech Stack
 
 - HTML5 – Page structure and forms
 
@@ -32,7 +32,7 @@ This lab intends to create a dynamic shopping cart application to practice and r
 
 - Local Storage API – Persistent data storage
 
-### Project Structure
+##### Project Structure
 
 ```
 Task-Management-App/
@@ -43,7 +43,7 @@ Task-Management-App/
 └── README.md         # Project documentation
 ```
 
-### How to Use
+##### How to Use
 
 - Clone or download this [repository](https://github.com/urmee04/Dynamic-Shopping-Cart.git)
 - Open the index.html file in your browser
